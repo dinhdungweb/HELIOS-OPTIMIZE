@@ -11,6 +11,7 @@
   "sections": {
     "background_video_responsive_ckzixV": {
       "type": "background-video-responsive",
+      "disabled": true,
       "name": "Video responsive",
       "settings": {
         "video_full_vh": true,
@@ -27,6 +28,54 @@
         "description": "",
         "button_label": "",
         "button_link": ""
+      }
+    },
+    "two_banner_3xH63d": {
+      "type": "two-banner",
+      "blocks": {
+        "banner_PY4DrE": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/Artboard_5.jpg",
+            "video_loop": false,
+            "link": "",
+            "title": "",
+            "title_color": "#ffffff",
+            "title_bg": "rgba(0,0,0,0)",
+            "h_align": "center",
+            "v_align": "middle",
+            "text_align": "center",
+            "x_offset": 0,
+            "y_offset": 0,
+            "padding": 12
+          }
+        },
+        "banner_RDTW83": {
+          "type": "banner",
+          "settings": {
+            "video": "shopify://files/videos/Slide 1-Mobile (1).mp4",
+            "video_loop": false,
+            "link": "",
+            "title": "",
+            "title_color": "#ffffff",
+            "title_bg": "rgba(0,0,0,0)",
+            "h_align": "center",
+            "v_align": "middle",
+            "text_align": "center",
+            "x_offset": 0,
+            "y_offset": 0,
+            "padding": 12
+          }
+        }
+      },
+      "block_order": [
+        "banner_PY4DrE",
+        "banner_RDTW83"
+      ],
+      "name": "Two Banners",
+      "settings": {
+        "overlap_header": false,
+        "gap": 0
       }
     },
     "featured_collection_Tib9zr": {
@@ -51,8 +100,57 @@
         "show_view_all": false
       }
     },
+    "two_banner_BxwVkX": {
+      "type": "two-banner",
+      "blocks": {
+        "banner_WtYEJc": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/Artboard_2.jpg",
+            "video_loop": false,
+            "link": "",
+            "title": "",
+            "title_color": "#ffffff",
+            "title_bg": "rgba(0,0,0,0)",
+            "h_align": "center",
+            "v_align": "middle",
+            "text_align": "center",
+            "x_offset": 0,
+            "y_offset": 0,
+            "padding": 12
+          }
+        },
+        "banner_DXWDFh": {
+          "type": "banner",
+          "settings": {
+            "video": "shopify://files/videos/Slide 2-Mobile.mp4",
+            "video_loop": false,
+            "link": "",
+            "title": "",
+            "title_color": "#ffffff",
+            "title_bg": "rgba(0,0,0,0)",
+            "h_align": "center",
+            "v_align": "middle",
+            "text_align": "center",
+            "x_offset": 0,
+            "y_offset": 0,
+            "padding": 12
+          }
+        }
+      },
+      "block_order": [
+        "banner_WtYEJc",
+        "banner_DXWDFh"
+      ],
+      "name": "Two Banners",
+      "settings": {
+        "overlap_header": false,
+        "gap": 0
+      }
+    },
     "background_video_responsive_Y7riqe": {
       "type": "background-video-responsive",
+      "disabled": true,
       "name": "Video responsive",
       "settings": {
         "video_full_vh": true,
@@ -93,8 +191,57 @@
         "show_view_all": false
       }
     },
+    "two_banner_VGizeM": {
+      "type": "two-banner",
+      "blocks": {
+        "banner_z9xc3B": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/Artboard_1.jpg",
+            "video_loop": false,
+            "link": "",
+            "title": "",
+            "title_color": "#ffffff",
+            "title_bg": "rgba(0,0,0,0)",
+            "h_align": "center",
+            "v_align": "middle",
+            "text_align": "center",
+            "x_offset": 0,
+            "y_offset": 0,
+            "padding": 12
+          }
+        },
+        "banner_HPPhaK": {
+          "type": "banner",
+          "settings": {
+            "video": "shopify://files/videos/Slide 3-Mobile (1).mp4",
+            "video_loop": false,
+            "link": "",
+            "title": "",
+            "title_color": "#ffffff",
+            "title_bg": "rgba(0,0,0,0)",
+            "h_align": "center",
+            "v_align": "middle",
+            "text_align": "center",
+            "x_offset": 0,
+            "y_offset": 0,
+            "padding": 12
+          }
+        }
+      },
+      "block_order": [
+        "banner_z9xc3B",
+        "banner_HPPhaK"
+      ],
+      "name": "Two Banners",
+      "settings": {
+        "overlap_header": false,
+        "gap": 0
+      }
+    },
     "background_video_responsive_WnXn74": {
       "type": "background-video-responsive",
+      "disabled": true,
       "name": "Video responsive",
       "settings": {
         "video_full_vh": true,
@@ -116,9 +263,12 @@
   },
   "order": [
     "background_video_responsive_ckzixV",
+    "two_banner_3xH63d",
     "featured_collection_Tib9zr",
+    "two_banner_BxwVkX",
     "background_video_responsive_Y7riqe",
     "featured_collection_cNNQdn",
+    "two_banner_VGizeM",
     "background_video_responsive_WnXn74"
   ]
 }
