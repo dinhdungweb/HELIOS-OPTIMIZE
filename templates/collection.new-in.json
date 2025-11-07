@@ -47,36 +47,36 @@
         "button_P8Wzc3": {
           "type": "button",
           "settings": {
-            "button_text": "Click Here",
-            "button_link": ""
+            "button_text": "NHẪN MỚI",
+            "button_link": "shopify://collections/nhan-bac-nam"
           }
         },
         "button_XbEmLV": {
           "type": "button",
           "settings": {
-            "button_text": "Click Here",
-            "button_link": ""
+            "button_text": "VÒNG TAY MỚI",
+            "button_link": "shopify://collections/vong-tay-bac-nam"
           }
         },
         "button_DxHMpb": {
           "type": "button",
           "settings": {
-            "button_text": "Click Here",
-            "button_link": ""
+            "button_text": "DÂY CHUYỀN MỚI",
+            "button_link": "shopify://collections/day-chuyen-bac-nam"
           }
         },
         "button_txm8VB": {
           "type": "button",
           "settings": {
-            "button_text": "Click Here",
-            "button_link": ""
+            "button_text": "MẶT DÂY CHUYỀN MỚI",
+            "button_link": "shopify://collections/mat-day-chuyen-bac-s925"
           }
         },
         "button_ymRCYD": {
           "type": "button",
           "settings": {
-            "button_text": "Click Here",
-            "button_link": ""
+            "button_text": "KHUYÊN TAI MỚI",
+            "button_link": "shopify://collections/khuyen-tai-bac-nam"
           }
         }
       },
