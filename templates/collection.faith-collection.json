@@ -35,7 +35,7 @@
       "name": "Video responsive",
       "settings": {
         "video_full_vh": false,
-        "video_height_desktop": 900,
+        "video_height_desktop": 620,
         "video_height_mobile": 560,
         "video_link": "",
         "video_link_new_tab": false,
@@ -44,8 +44,8 @@
         "subtitle": "",
         "title": "",
         "title_image": "shopify://shop_images/Font_Lordish_Viet_Hoa.png",
-        "title_image_width_desktop": 240,
-        "description": "",
+        "title_image_width_desktop": 150,
+        "description": "Là bộ sưu tập lớn nhất và mang yếu tố chiều sâu nhất trong năm 2025 của HELIOS. Bộ sưu tập là tổng hòa của những hình tượng signature trong 10 năm phát triển của HELIOS - Lotus, Sunflower, Chrysaber, Bushido. Đồng thời đây là BST sở hữu nhiều phong cách phối nhất từng được chế tác",
         "button_label": "",
         "button_link": ""
       }
