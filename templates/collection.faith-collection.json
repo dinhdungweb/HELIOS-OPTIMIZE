@@ -74,7 +74,7 @@
       ],
       "name": "Two Banners",
       "settings": {
-        "overlap_header": false,
+        "overlap_header": true,
         "gap": 0
       }
     },
@@ -144,7 +144,7 @@
       ],
       "name": "Two Banners",
       "settings": {
-        "overlap_header": false,
+        "overlap_header": true,
         "gap": 0
       }
     },
@@ -235,7 +235,7 @@
       ],
       "name": "Two Banners",
       "settings": {
-        "overlap_header": false,
+        "overlap_header": true,
         "gap": 0
       }
     },
