@@ -11,7 +11,6 @@
   "sections": {
     "background_video_responsive_ckzixV": {
       "type": "background-video-responsive",
-      "disabled": true,
       "name": "Video responsive",
       "settings": {
         "video_full_vh": true,
@@ -19,7 +18,7 @@
         "video_height_mobile": 450,
         "video_link": "",
         "video_link_new_tab": false,
-        "video_shopify_desktop": "shopify://files/videos/Slide 2-PC.mp4",
+        "video_shopify_desktop": "shopify://files/videos/VID MOOD TỔNG FAITH ĐỨC TIN 16x9 COLOR (1).mp4",
         "video_external_desktop": "",
         "video_external_mobile": "",
         "subtitle": "",
@@ -28,24 +27,6 @@
         "description": "",
         "button_label": "",
         "button_link": ""
-      }
-    },
-    "video_EnkHUJ": {
-      "type": "video",
-      "name": "Video",
-      "settings": {
-        "video_shopify": "shopify://files/videos/VID MOOD TỔNG FAITH ĐỨC TIN 16x9 COLOR (1).mp4",
-        "video_external": "",
-        "subheading": "",
-        "video_title": "",
-        "title_size": 60,
-        "title_width": 12,
-        "heading_h1": false,
-        "text": "",
-        "enlarge_text": false,
-        "overlay_position": "position--hcenter position--vcenter",
-        "full_width": true,
-        "overlay_style_tint": true
       }
     },
     "two_banner_3xH63d": {
@@ -351,7 +332,6 @@
   },
   "order": [
     "background_video_responsive_ckzixV",
-    "video_EnkHUJ",
     "two_banner_3xH63d",
     "featured_collection_Tib9zr",
     "two_banner_BxwVkX",
