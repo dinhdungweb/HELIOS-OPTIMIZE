@@ -267,10 +267,31 @@
         "show_view_all": false
       }
     },
-    "two_banner_3gUheU": {
+    "background_video_responsive_WnXn74": {
+      "type": "background-video-responsive",
+      "disabled": true,
+      "name": "Video responsive",
+      "settings": {
+        "video_full_vh": true,
+        "video_height_desktop": 700,
+        "video_height_mobile": 450,
+        "video_link": "",
+        "video_link_new_tab": false,
+        "video_shopify_desktop": "shopify://files/videos/Slide 1 (1) (1).mp4",
+        "video_external_desktop": "",
+        "video_external_mobile": "",
+        "subtitle": "",
+        "title": "",
+        "title_image_width_desktop": 800,
+        "description": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "two_banner_bq4hbL": {
       "type": "two-banner",
       "blocks": {
-        "banner_XiqK3g": {
+        "banner_irfXQY": {
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/Artboard_11.jpg",
@@ -288,7 +309,7 @@
             "padding": 12
           }
         },
-        "banner_eCyq67": {
+        "banner_GkKJDW": {
           "type": "banner",
           "settings": {
             "video": "shopify://files/videos/Slide 5-mobile.mp4",
@@ -308,33 +329,13 @@
         }
       },
       "block_order": [
-        "banner_XiqK3g",
-        "banner_eCyq67"
+        "banner_irfXQY",
+        "banner_GkKJDW"
       ],
       "name": "Two Banners",
       "settings": {
         "overlap_header": true,
         "gap": 0
-      }
-    },
-    "background_video_responsive_WnXn74": {
-      "type": "background-video-responsive",
-      "name": "Video responsive",
-      "settings": {
-        "video_full_vh": true,
-        "video_height_desktop": 700,
-        "video_height_mobile": 450,
-        "video_link": "",
-        "video_link_new_tab": false,
-        "video_shopify_desktop": "shopify://files/videos/Slide 1 (1) (1).mp4",
-        "video_external_desktop": "",
-        "video_external_mobile": "",
-        "subtitle": "",
-        "title": "",
-        "title_image_width_desktop": 800,
-        "description": "",
-        "button_label": "",
-        "button_link": ""
       }
     }
   },
@@ -347,7 +348,7 @@
     "featured_collection_cNNQdn",
     "two_banner_VGizeM",
     "featured_collection_NMz84T",
-    "two_banner_3gUheU",
-    "background_video_responsive_WnXn74"
+    "background_video_responsive_WnXn74",
+    "two_banner_bq4hbL"
   ]
 }
