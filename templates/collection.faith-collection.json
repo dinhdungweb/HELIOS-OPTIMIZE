@@ -30,6 +30,24 @@
         "button_link": ""
       }
     },
+    "video_EnkHUJ": {
+      "type": "video",
+      "name": "Video",
+      "settings": {
+        "video_shopify": "shopify://files/videos/VID MOOD TỔNG FAITH ĐỨC TIN 16x9 COLOR (1).mp4",
+        "video_external": "",
+        "subheading": "",
+        "video_title": "Video",
+        "title_size": 60,
+        "title_width": 12,
+        "heading_h1": false,
+        "text": "<p>Pair text with a video to draw attention to an important detail of your brand or product line.</p>",
+        "enlarge_text": false,
+        "overlay_position": "position--hcenter position--vcenter",
+        "full_width": true,
+        "overlay_style_tint": true
+      }
+    },
     "two_banner_3xH63d": {
       "type": "two-banner",
       "blocks": {
@@ -333,6 +351,7 @@
   },
   "order": [
     "background_video_responsive_ckzixV",
+    "video_EnkHUJ",
     "two_banner_3xH63d",
     "featured_collection_Tib9zr",
     "two_banner_BxwVkX",
