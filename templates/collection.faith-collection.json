@@ -18,7 +18,7 @@
         "video_height_mobile": 450,
         "video_link": "",
         "video_link_new_tab": false,
-        "video_shopify_desktop": "shopify://files/videos/Slide 1 (1).mp4",
+        "video_shopify_desktop": "shopify://files/videos/Slide 2-PC.mp4",
         "video_external_desktop": "",
         "video_external_mobile": "",
         "subtitle": "",
@@ -60,6 +60,48 @@
         "video_height_mobile": 450,
         "video_link": "",
         "video_link_new_tab": false,
+        "video_shopify_desktop": "shopify://files/videos/Mạnh mẽ (1).mp4",
+        "video_external_desktop": "",
+        "video_external_mobile": "",
+        "subtitle": "",
+        "title": "",
+        "title_image_width_desktop": 800,
+        "description": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "featured_collection_cNNQdn": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "title": "",
+        "featured_collection_align": "left",
+        "collection": "faith-collection",
+        "layout": "carousel",
+        "featured_addtocart_hide": false,
+        "show_add_to_cart": true,
+        "show_title": true,
+        "show_price": true,
+        "show_review": true,
+        "show_vendor": false,
+        "grid": 4,
+        "rows": 2,
+        "grid_mobile": "2",
+        "hide_swatches": false,
+        "alternate_bg_color": false,
+        "show_view_all": false
+      }
+    },
+    "background_video_responsive_WnXn74": {
+      "type": "background-video-responsive",
+      "name": "Video responsive",
+      "settings": {
+        "video_full_vh": true,
+        "video_height_desktop": 700,
+        "video_height_mobile": 450,
+        "video_link": "",
+        "video_link_new_tab": false,
         "video_shopify_desktop": "shopify://files/videos/Slide 1 (1).mp4",
         "video_external_desktop": "",
         "video_external_mobile": "",
@@ -75,6 +117,8 @@
   "order": [
     "background_video_responsive_ckzixV",
     "featured_collection_Tib9zr",
-    "background_video_responsive_Y7riqe"
+    "background_video_responsive_Y7riqe",
+    "featured_collection_cNNQdn",
+    "background_video_responsive_WnXn74"
   ]
 }
