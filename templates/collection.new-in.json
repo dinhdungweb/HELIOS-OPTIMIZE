@@ -71,6 +71,13 @@
             "button_text": "MẶT DÂY CHUYỀN MỚI",
             "button_link": "shopify://collections/mat-day-chuyen-bac-s925"
           }
+        },
+        "button_A9T8qw": {
+          "type": "button",
+          "settings": {
+            "button_text": "KHUYÊN TAI MỚI",
+            "button_link": "shopify://collections/khuyen-tai-bac-nam"
+          }
         }
       },
       "block_order": [
@@ -78,7 +85,8 @@
         "button_PGmWBQ",
         "button_HAyRYn",
         "button_rH9NLG",
-        "button_gcpcLz"
+        "button_gcpcLz",
+        "button_A9T8qw"
       ],
       "name": "Media with Text Custom",
       "settings": {
