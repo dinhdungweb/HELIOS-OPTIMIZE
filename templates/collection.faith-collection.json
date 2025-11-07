@@ -30,6 +30,26 @@
         "button_link": ""
       }
     },
+    "background_video_responsive_Qi9RKG": {
+      "type": "background-video-responsive",
+      "name": "Video responsive",
+      "settings": {
+        "video_full_vh": false,
+        "video_height_desktop": 900,
+        "video_height_mobile": 560,
+        "video_link": "",
+        "video_link_new_tab": false,
+        "video_external_desktop": "",
+        "video_external_mobile": "",
+        "subtitle": "",
+        "title": "",
+        "title_image": "shopify://shop_images/Font_Lordish_Viet_Hoa.png",
+        "title_image_width_desktop": 800,
+        "description": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
     "two_banner_3xH63d": {
       "type": "two-banner",
       "blocks": {
@@ -341,6 +361,7 @@
   },
   "order": [
     "background_video_responsive_ckzixV",
+    "background_video_responsive_Qi9RKG",
     "two_banner_3xH63d",
     "featured_collection_Tib9zr",
     "two_banner_BxwVkX",
