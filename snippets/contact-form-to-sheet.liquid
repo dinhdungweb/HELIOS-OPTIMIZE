@@ -9,10 +9,12 @@
         <h3 class="form-to-sheet-title">{{ cf-title }}</h3>
         <div class="form-to-sheet-des text-center">{{ cf-paragraph }}</div>
         <form id="ajax-form" action="{{ cf-form-action-url }}" method="post">
+          {% if cf-placeholder1 and cf-placeholder2 != "" %}
           <div class="flex">
             <input type="text" id="name" name="{{ cf-entry1 }}" placeholder="{{ cf-placeholder1 }}" required>
             <input type="number" id="tel" name="{{ cf-entry2 }}" placeholder="{{ cf-placeholder2 }}" required>
           </div>
+          {% endif %}
           {% if cf-placeholder3 != "" %}
           <input type="email" id="email" name="{{ cf-entry3 }}" placeholder="{{ cf-placeholder3 }}" required>
           {% endif %}
