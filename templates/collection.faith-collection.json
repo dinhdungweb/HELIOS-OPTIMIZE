@@ -18,9 +18,9 @@
         "video_height_mobile": 560,
         "video_link": "",
         "video_link_new_tab": false,
-        "video_shopify_desktop": "shopify://files/videos/VID MOOD TỔNG FAITH ĐỨC TIN 16x9 COLOR (1).mp4",
+        "video_shopify_desktop": "shopify://files/videos/web.mp4",
         "video_external_desktop": "",
-        "video_shopify_mobile": "shopify://files/videos/VID MOOD TỔNG FAITH ĐỨC TIN 16x9 COLOR (1).mp4",
+        "video_shopify_mobile": "shopify://files/videos/web.mp4",
         "video_external_mobile": "",
         "subtitle": "",
         "title": "",
@@ -37,6 +37,7 @@
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/Artboard_5.jpg",
+            "video_url": "",
             "video_loop": false,
             "link": "",
             "title": "",
@@ -54,6 +55,7 @@
           "type": "banner",
           "settings": {
             "video": "shopify://files/videos/Slide 1-Mobile (1).mp4",
+            "video_url": "",
             "video_loop": false,
             "link": "",
             "title": "",
@@ -107,6 +109,7 @@
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/Artboard_2.jpg",
+            "video_url": "",
             "video_loop": false,
             "link": "",
             "title": "",
@@ -124,6 +127,7 @@
           "type": "banner",
           "settings": {
             "video": "shopify://files/videos/Slide 2-Mobile.mp4",
+            "video_url": "",
             "video_loop": false,
             "link": "",
             "title": "",
@@ -198,6 +202,7 @@
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/Artboard_1.jpg",
+            "video_url": "",
             "video_loop": false,
             "link": "",
             "title": "",
@@ -215,6 +220,7 @@
           "type": "banner",
           "settings": {
             "video": "shopify://files/videos/Slide 3-Mobile (1).mp4",
+            "video_url": "",
             "video_loop": false,
             "link": "",
             "title": "",
@@ -268,6 +274,7 @@
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/Artboard_11.jpg",
+            "video_url": "",
             "video_loop": false,
             "link": "",
             "title": "",
@@ -285,6 +292,7 @@
           "type": "banner",
           "settings": {
             "video": "shopify://files/videos/Slide 5-mobile.mp4",
+            "video_url": "",
             "video_loop": false,
             "link": "",
             "title": "",
