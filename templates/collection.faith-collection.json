@@ -9,44 +9,6 @@
  */
 {
   "sections": {
-    "slideshow_apt3Yh": {
-      "type": "slideshow",
-      "blocks": {
-        "image_CfxM3J": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Slide11-ezgif.com-video-to-gif-converter.gif",
-            "slide_link": "",
-            "subheading": "",
-            "title": "",
-            "title_size": 60,
-            "title_width": 12,
-            "heading_h1": false,
-            "text": "",
-            "enlarge_text": true,
-            "button_label": "",
-            "overlay_position": "position--hcenter position--vcenter",
-            "overlay_position_mobile": "position--hcenter-xs position--vcenter-xs"
-          }
-        }
-      },
-      "block_order": [
-        "image_CfxM3J"
-      ],
-      "name": "Slideshow",
-      "settings": {
-        "height": "adapt",
-        "height_desktop": 600,
-        "height_mobile": 500,
-        "full_width": true,
-        "mobile_overlay_under": false,
-        "overlay_style_tint": true,
-        "slide_transition": "slide",
-        "slide_navigation": "dots",
-        "autoplay": true,
-        "autoplay_speed": 7
-      }
-    },
     "main": {
       "type": "main-collection",
       "settings": {
@@ -70,10 +32,30 @@
         "enable_sorting": true,
         "show_featured_in_sort": true
       }
+    },
+    "background_video_responsive_ckzixV": {
+      "type": "background-video-responsive",
+      "name": "Video responsive",
+      "settings": {
+        "video_full_vh": false,
+        "video_height_desktop": 700,
+        "video_height_mobile": 450,
+        "video_link": "",
+        "video_link_new_tab": false,
+        "video_shopify_desktop": "shopify://files/videos/Slide 1 (1).mp4",
+        "video_external_desktop": "",
+        "video_external_mobile": "",
+        "subtitle": "",
+        "title": "",
+        "title_image_width_desktop": 800,
+        "description": "",
+        "button_label": "",
+        "button_link": ""
+      }
     }
   },
   "order": [
-    "slideshow_apt3Yh",
+    "background_video_responsive_ckzixV",
     "main"
   ]
 }
