@@ -1,0 +1,160 @@
+<div class="cart-drawer">
+  <div class="cart-drawer-box">
+    <header class="cart-drawer-header">
+      <div class="cart-title">Shopping Cart</div>
+      <div class="cart-drawer-header-right">
+        <span class="cart-drawer-header-right-items">{{ cart.item_count }} sản phẩm</span>
+        <button id="btn-close" title="Đóng" class="cart-drawer-header-right-close" type="button">
+          {% render 'svg-close' %}
+        </button>
+      </div>
+    </header>
+
+    {% form 'cart', cart, class: 'cart-drawer-form' %}
+      {% if cart.item_count == 0 %}
+        <p class="cart-drawer-empty">Giỏ hàng của bạn đang trống!</p>
+      {% else %}
+        <div class="cart-drawer-items">
+          {% for item in cart.items %}
+            <div class="cart-drawer-item" data-line-item-key="{{ item.key }}">
+              <div class="cart-drawer-item-image">
+                <img src="{{ item.image | img_url: '200x' }}" alt="{{ item.title }}">
+              </div>
+              <div class="cart-drawer-item-main">
+                <div class="cart-drawer-item-main-flex">
+                  <div class="cart-drawer-item-main-flex-left">
+                    <h3>
+                      <a href="{{ item.url }}">{{ item.product.title }}</a>
+                    </h3>
+                    <span>{{ item.variant.title }}</span>
+                    <div class="cart-price">
+                      {% if item.original_line_price > item.final_line_price %}
+                        <span class="original-price" style="text-decoration: line-through;">{{ item.original_line_price | money }}</span>
+                        <span class="discounted-price">{{ item.final_line_price | money }}</span>
+                      {% else %}
+                        <span>{{ item.original_line_price | money }}</span>
+                      {% endif %}
+                    </div>
+                    <div class="cart-drawer-quantity-selector">
+                      <button class="cart-drawer-quantity-selector-minus" type="button">
+                        {% render 'svg-minus' %}
+                      </button>
+                      <input type="text" readonly value="{{ item.quantity }}">
+                      <button class="cart-drawer-quantity-selector-plus" type="button">{% render 'svg-plus' %}</button>
+                    </div>
+                  </div>
+                  <div class="cart-drawer-item-main-flex-right">
+                    <div class="cart-drawer-remove-btn">{% render 'svg-delete' %}</div>
+                    {% if item.line_level_discount_allocations.size > 0 %}
+                      <ul class="cart-discount-list">
+                      {% for discount_allocation in item.line_level_discount_allocations %}
+                        <li class="cart-discount">
+                          <div class="cart-discount__label"><span class="cart-discount__icon">{% render 'icon-label' %}</span> {{ discount_allocation.discount_application.title }}</div>
+                          <div class="cart-discount__amount">(-<span class="theme-money">{%- render "price", price: discount_allocation.amount, disable_currency_code: true -%}</span>)</div>
+                        </li>
+                      {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+
+          <div class="recommend-product-heading">{{ section.settings.recommend-product-heading }}</div>
+          
+          {% if section.settings.product-list != blank %}
+              {% for product in section.settings.product-list %}
+                  <div class="cart-drawer-item">
+                    <div class="cart-drawer-item-image">
+                      <a href="{{ product.url }}" alt="{{ product.title }}">{{ product.featured_image | image_url: width: 200 | image_tag }}</a>
+                    </div> 
+                    <div class="cart-drawer-item-main">
+                      <div class="recommend-product-title">
+                      <a href="{{ product.url }}" alt="{{ product.title }}">{{ product.title }}</a>
+                      </div>
+                      <div class="recommend-product-price">
+                      {% if product.compare_at_price > product.price %}
+                        <span class="original-price" style="text-decoration: line-through;">
+                          {{ product.compare_at_price | money }}
+                        </span>
+                        <span class="sale-price">
+                          {{ product.price | money }}
+                        </span>
+                      {% else %}
+                        <span class="regular-price">
+                          {{ product.price | money }}
+                        </span>
+                      {% endif %}
+                      </div>
+                      {% if product.variants.size > 1 %}
+                          {% assign sold_out = true %}
+                          {% for variant in product.variants %}
+                              {% unless variant.available %}
+                                  {% continue %}
+                              {% endunless %}
+                              {% assign sold_out = false %}
+                              {% break %}
+                          {% endfor %}
+                      
+                          {% if sold_out %}
+                              <button class="add-to-cart-btn product-variant-submit-button" disabled>Hết hàng</button>
+                          {% else %}
+                              <div class="product-variant-dropdown">
+                                  <form class="product-add-to-cart" action="/cart/add" method="post">
+                                      <select name="id" class="product-variant-select">
+                                          {% for variant in product.variants %}
+                                              <option value="{{ variant.id }}" {% unless variant.available %}disabled="disabled"{% endunless %}>
+                                                  {{ variant.title }}
+                                                  {% unless variant.available %}
+                                                      - Hết hàng
+                                                  {% endunless %}
+                                              </option>
+                                          {% endfor %}
+                                      </select>
+                                      <button class="add-to-cart-btn product-variant-submit-button" data-product-variant="{{product.first_available_variant.id}}">Thêm vào giỏ hàng</button>
+                                  </form>
+                              </div>
+                          {% endif %}
+                      {% else %}
+                          {% form 'product', product, class: 'product-add-to-cart' %}
+                              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                              <button class="add-to-cart-btn product-variant-submit-button" data-product-variant="{{product.first_available_variant.id}}">
+                                  {% if product.available %}
+                                      Thêm vào giỏ hàng
+                                  {% else %}
+                                      Hết hàng
+                                  {% endif %}
+                              </button>
+                          {% endform %}
+                      {% endif %}
+                    </div>
+                  </div>
+              {% endfor %}
+            {% endif %}
+           </div>
+        <footer class="cart-drawer-footer">
+          {% if cart.total_discounts > 0 %}
+            <div class="cart-drawer-footer-row">
+              <h3>Tổng phụ</h3>
+              <span>{{ cart.original_total_price | money }}</span>
+            </div>
+            <div class="cart-drawer-footer-row">
+              <h3>Giảm giá</h3>
+              <span>- {{ cart.total_discounts | money }}</span>
+            </div>
+          {% endif %}
+          <div class="cart-drawer-footer-row">
+            <h3>Tổng cộng</h3>
+            <span>{{ cart.total_price | money }}</span>
+          </div>
+          <div class="cart-drawer-item-main-grid">
+            <!-- <a href="/cart/"><button class="cart-drawer-second-button">Xem giỏ hàng</button></a> -->
+            <a href="/checkout"><button type="submit" name="checkout" class="cart-drawer-button">Thanh toán</button></a>
+          </div>
+        </footer>
+      {% endif %}
+    {% endform %}
+  </div>
+</div>
