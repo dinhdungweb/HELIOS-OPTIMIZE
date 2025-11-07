@@ -11,10 +11,34 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
+    },
+    "contact_form_to_sheet_6bWA3R": {
+      "type": "contact-form-to-sheet",
+      "name": "Contact form to sheet",
+      "settings": {
+        "contact-form-to-sheet-title": "HÃY CHIA SẺ NIỀM TIN CỦA BẠN",
+        "banner_left": "shopify://shop_images/TIMELAPSE_TU_N_ANH_TR_GIF_3.gif",
+        "contact-form-to-sheet-paragraph": "<p><strong>“Bạn tin vào thứ gì, thì có thể trở thành thứ đó\" - Đây là ĐỨC TIN đã tạo nên HELIOS</strong></p><p><strong>Còn đức tin của bạn là gì? Hãy viết lên niềm tin của riêng bạn – một câu, một từ, hay chỉ là ý nghĩ thoáng qua. </strong></p><p><strong>Biết đâu, chính từ đó, HELIOS sẽ tìm thấy cảm hứng để tạo nên một chế tác dành riêng cho bạn. </strong></p>",
+        "form_action_url": "",
+        "form_action_entry1": "",
+        "form_action_placeholder1": "",
+        "form_action_entry2": "",
+        "form_action_placeholder2": "",
+        "form_action_entry3": "",
+        "form_action_placeholder3": "",
+        "form_action_entry4": "",
+        "form_action_placeholder4": "",
+        "form_action_entry5": "",
+        "form_action_placeholder5": "Nội dung",
+        "form_action_entry6": "",
+        "form_action_button": "Đăng ký"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "contact_form_to_sheet_6bWA3R"
   ]
 }
