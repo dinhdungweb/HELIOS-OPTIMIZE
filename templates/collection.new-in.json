@@ -34,67 +34,64 @@
         "show_featured_in_sort": true
       }
     },
-    "video_with_text_LKmpmV": {
-      "type": "video-with-text",
+    "title_with_button_bGEUjh": {
+      "type": "title-with-button",
       "blocks": {
-        "button_LUcnnt": {
+        "button_qgUxBj": {
           "type": "button",
           "settings": {
             "button_text": "BEST SELLERS",
             "button_link": "shopify://collections/best-sellers"
           }
         },
-        "button_PGmWBQ": {
+        "button_P8Wzc3": {
           "type": "button",
           "settings": {
-            "button_text": "NHẪN MỚI",
-            "button_link": "shopify://collections/nhan-bac-nam"
+            "button_text": "Click Here",
+            "button_link": ""
           }
         },
-        "button_HAyRYn": {
+        "button_XbEmLV": {
           "type": "button",
           "settings": {
-            "button_text": "VÒNG TAY MỚI",
-            "button_link": "shopify://collections/vong-tay-bac-nam"
+            "button_text": "Click Here",
+            "button_link": ""
           }
         },
-        "button_rH9NLG": {
+        "button_DxHMpb": {
           "type": "button",
           "settings": {
-            "button_text": "DÂY CHUYỀN MỚI",
-            "button_link": "shopify://collections/day-chuyen-bac-nam"
+            "button_text": "Click Here",
+            "button_link": ""
           }
         },
-        "button_gcpcLz": {
+        "button_txm8VB": {
           "type": "button",
           "settings": {
-            "button_text": "MẶT DÂY CHUYỀN MỚI",
-            "button_link": "shopify://collections/mat-day-chuyen-bac-s925"
+            "button_text": "Click Here",
+            "button_link": ""
           }
         },
-        "button_A9T8qw": {
+        "button_ymRCYD": {
           "type": "button",
           "settings": {
-            "button_text": "KHUYÊN TAI MỚI",
-            "button_link": "shopify://collections/khuyen-tai-bac-nam"
+            "button_text": "Click Here",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "button_LUcnnt",
-        "button_PGmWBQ",
-        "button_HAyRYn",
-        "button_rH9NLG",
-        "button_gcpcLz",
-        "button_A9T8qw"
+        "button_qgUxBj",
+        "button_P8Wzc3",
+        "button_XbEmLV",
+        "button_DxHMpb",
+        "button_txm8VB",
+        "button_ymRCYD"
       ],
-      "name": "Media with Text Custom",
+      "name": "Title with button",
       "settings": {
-        "media_type": "video",
-        "content_position": "left",
+        "content_position": "right",
         "text_alignment": "left",
-        "desktop_video_url": "",
-        "mobile_video_url": "",
         "heading": "NEW IN",
         "paragraph": "Đây là những \"Câu chuyện\" mới nhất được rèn thành chế tác."
       }
@@ -102,6 +99,6 @@
   },
   "order": [
     "main",
-    "video_with_text_LKmpmV"
+    "title_with_button_bGEUjh"
   ]
 }
