@@ -311,7 +311,6 @@
     },
     "background_video_responsive_WnXn74": {
       "type": "background-video-responsive",
-      "disabled": true,
       "name": "Video responsive",
       "settings": {
         "video_full_vh": true,
