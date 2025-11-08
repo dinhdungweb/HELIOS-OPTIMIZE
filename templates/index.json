@@ -19,6 +19,8 @@
             "image": "shopify://shop_images/dong-xu-helios-moneta_2.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "Collection Title",
             "title_color": "#ffffff",
@@ -37,6 +39,8 @@
             "image": "shopify://shop_images/dong-xu-helios-moneta_4.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "Collection Title",
             "title_color": "#ffffff",
@@ -57,7 +61,12 @@
       "name": "Two Banners",
       "settings": {
         "overlap_header": true,
-        "gap": 0
+        "gap": 0,
+        "sticky_desktop": true,
+        "sticky_mobile_item": true,
+        "sticky_offset_desktop": 30,
+        "sticky_offset_mobile": 0,
+        "sticky_z_index": 1000
       }
     },
     "two_banner_qNEPMY": {
@@ -69,6 +78,8 @@
             "image": "shopify://shop_images/dong-xu-helios-moneta_2.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "Collection Title",
             "title_color": "#ffffff",
@@ -87,6 +98,8 @@
             "image": "shopify://shop_images/dong-xu-helios-moneta_4.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "Collection Title",
             "title_color": "#ffffff",
@@ -107,7 +120,12 @@
       "name": "Two Banners",
       "settings": {
         "overlap_header": true,
-        "gap": 0
+        "gap": 0,
+        "sticky_desktop": true,
+        "sticky_mobile_item": true,
+        "sticky_offset_desktop": 24,
+        "sticky_offset_mobile": 0,
+        "sticky_z_index": 1000
       }
     },
     "two_banner_C3RzCw": {
@@ -119,6 +137,8 @@
             "image": "shopify://shop_images/dong-xu-helios-moneta_2.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "Collection Title",
             "title_color": "#ffffff",
@@ -137,6 +157,8 @@
             "image": "shopify://shop_images/dong-xu-helios-moneta_4.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "Collection Title",
             "title_color": "#ffffff",
@@ -157,7 +179,12 @@
       "name": "Two Banners",
       "settings": {
         "overlap_header": true,
-        "gap": 0
+        "gap": 0,
+        "sticky_desktop": true,
+        "sticky_mobile_item": true,
+        "sticky_offset_desktop": 0,
+        "sticky_offset_mobile": 0,
+        "sticky_z_index": 1000
       }
     },
     "featured_collection_mkMCHL": {
