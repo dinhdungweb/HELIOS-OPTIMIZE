@@ -66,8 +66,11 @@
                         srcset="{{ img_desktop | image_url: width: 800 }} 800w, {{ img_desktop | image_url: width: 1200 }} 1200w, {{ img_desktop | image_url: width: 1600 }} 1600w, {{ img_desktop | image_url: width: 2000 }} 2000w"
                         sizes="(min-width: 750px) 50vw, 100vw">
               {% endif %}
-              <img src="{{ (img_mobile | default: img_desktop) | image_url: width: 1200 }}"
-                   alt="{{ (img_mobile | default: img_desktop).alt | escape }}"
+              {%- liquid
+                assign fallback_image = img_mobile | default: img_desktop
+              -%}
+              <img src="{{ fallback_image | image_url: width: 1200 }}"
+                   alt="{{ fallback_image.alt | escape }}"
                    loading="lazy" decoding="async">
             </picture>
           {%- else -%}
