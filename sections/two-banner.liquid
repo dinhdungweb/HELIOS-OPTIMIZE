@@ -18,10 +18,10 @@
       .two-banner--{{ section.id }} .two-banner__media { aspect-ratio: var(--ratio-desktop, var(--ratio-mobile, 1.7778)); }
     }
     @media (min-width: 769px) {
-      .two-banner--{{ section.id }}.is-sticky-desktop { position: sticky; top: var(--sticky-offset-desktop, 0px); z-index: var(--sticky-z-index, 1000); }
+      .two-banner--{{ section.id }}.is-sticky-desktop { position: -webkit-sticky; position: sticky; top: var(--sticky-offset-desktop, 0px); z-index: var(--sticky-z-index, 1000); }
     }
     @media (max-width: 768px) {
-      .two-banner--{{ section.id }}.is-sticky-mobile .two-banner__item { position: sticky; top: var(--sticky-offset-mobile, 0px); z-index: var(--sticky-z-index, 1000); }
+      .two-banner--{{ section.id }}.is-sticky-mobile .two-banner__item { position: -webkit-sticky; position: sticky; top: var(--sticky-offset-mobile, 0px); z-index: var(--sticky-z-index, 1000); }
     }
     .two-banner--{{ section.id }} .two-banner__overlay {position:absolute; inset:0; display:flex; justify-content:center; align-items:center; z-index:5; pointer-events:none;}
     .two-banner--{{ section.id }} .two-banner__overlay.h-left {justify-content:flex-start;}
