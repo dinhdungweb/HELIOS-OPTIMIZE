@@ -26,11 +26,19 @@
   <div class="two-banner__grid">
     {%- for block in section.blocks -%}
       {%- liquid
-        assign img = block.settings.image
+        assign img_desktop = block.settings.image_desktop | default: block.settings.image
+        assign img_mobile = block.settings.image_mobile | default: block.settings.image
+        assign img = img_desktop
         assign vid = block.settings.video
         assign vurl = block.settings.video_url
         assign external_url = ''
         assign poster_image = img
+        assign ratio = 1.7778
+        if img_desktop != blank
+          assign ratio = img_desktop.aspect_ratio
+        elsif img_mobile != blank
+          assign ratio = img_mobile.aspect_ratio
+        endif
         if poster_image == blank and vid != blank
           assign poster_image = vid.preview_image
         endif
@@ -41,13 +49,27 @@
         endif
       -%}
       <div class="two-banner__item" {{ block.shopify_attributes }}>
-        <div class="two-banner__media">
+        <div class="two-banner__media" style="aspect-ratio: {{ ratio }}">
           {%- if vid != blank -%}
             {%- render 'inline-video', video_shopify: vid, image: poster_image, autoplay: false, loop: block.settings.video_loop -%}
           {%- elsif external_url != blank -%}
             {%- render 'inline-video', video_external: external_url, image: poster_image, autoplay: false, loop: block.settings.video_loop -%}
-          {%- elsif img != blank -%}
-            {%- render 'responsive-image', image: img -%}
+          {%- elsif img_desktop != blank or img_mobile != blank -%}
+            <picture>
+              {% if img_mobile != blank %}
+                <source media="(max-width: 768px)"
+                        srcset="{{ img_mobile | image_url: width: 480 }} 480w, {{ img_mobile | image_url: width: 768 }} 768w, {{ img_mobile | image_url: width: 1000 }} 1000w"
+                        sizes="100vw">
+              {% endif %}
+              {% if img_desktop != blank %}
+                <source media="(min-width: 769px)"
+                        srcset="{{ img_desktop | image_url: width: 800 }} 800w, {{ img_desktop | image_url: width: 1200 }} 1200w, {{ img_desktop | image_url: width: 1600 }} 1600w, {{ img_desktop | image_url: width: 2000 }} 2000w"
+                        sizes="(min-width: 750px) 50vw, 100vw">
+              {% endif %}
+              <img src="{{ (img_mobile | default: img_desktop) | image_url: width: 1200 }}"
+                   alt="{{ (img_mobile | default: img_desktop).alt | escape }}"
+                   loading="lazy" decoding="async">
+            </picture>
           {%- else -%}
             <div style="aspect-ratio: 16/9; background:#eee; display:flex; align-items:center; justify-content:center;">Banner</div>
           {%- endif -%}
@@ -96,7 +118,9 @@
       "type": "banner",
       "name": "Banner",
       "settings": [
-        {"type": "image_picker", "id": "image", "label": "Image"},
+        {"type": "image_picker", "id": "image_desktop", "label": "Ảnh Desktop"},
+        {"type": "image_picker", "id": "image_mobile", "label": "Ảnh Mobile"},
+        {"type": "image_picker", "id": "image", "label": "Image (Legacy)"},
         {"type": "video", "id": "video", "label": "Shopify Video"},
         {"type": "video_url", "id": "video_url", "label": "Video Youtube/Vimeo", "accept": ["youtube", "vimeo"]},
         {"type": "checkbox", "id": "video_loop", "label": "Loop Video", "default": false},
