@@ -17,6 +17,16 @@
     @media (min-width: 769px) {
       .two-banner--{{ section.id }} .two-banner__media { aspect-ratio: var(--ratio-desktop, var(--ratio-mobile, 1.7778)); }
     }
+    {% if section.settings.sticky_desktop %}
+    @media (min-width: 769px) {
+      .two-banner--{{ section.id }} { position: sticky; top: {{ section.settings.sticky_offset_desktop | default: 0 }}px; z-index: {{ section.settings.sticky_z_index | default: 10 }}; }
+    }
+    {% endif %}
+    {% if section.settings.sticky_mobile_item %}
+    @media (max-width: 768px) {
+      .two-banner--{{ section.id }} .two-banner__item { position: sticky; top: {{ section.settings.sticky_offset_mobile | default: 0 }}px; z-index: {{ section.settings.sticky_z_index | default: 10 }}; }
+    }
+    {% endif %}
     .two-banner--{{ section.id }} .two-banner__overlay {position:absolute; inset:0; display:flex; justify-content:center; align-items:center; z-index:5; pointer-events:none;}
     .two-banner--{{ section.id }} .two-banner__overlay.h-left {justify-content:flex-start;}
     .two-banner--{{ section.id }} .two-banner__overlay.h-right {justify-content:flex-end;}
@@ -152,6 +162,47 @@
       "max": 64,
       "step": 1,
       "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_desktop",
+      "label": "Sticky toàn bộ section (Desktop)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_mobile_item",
+      "label": "Sticky từng banner (Mobile)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "sticky_offset_desktop",
+      "label": "Khoảng cách từ trên (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sticky_offset_mobile",
+      "label": "Khoảng cách từ trên (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sticky_z_index",
+      "label": "Z-index khi sticky",
+      "min": 1,
+      "max": 9999,
+      "step": 1,
+      "default": 10
     }
   ],
   "blocks": [
