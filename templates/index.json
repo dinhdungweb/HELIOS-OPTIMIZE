@@ -64,7 +64,7 @@
         "gap": 0,
         "sticky_desktop": true,
         "sticky_mobile_item": true,
-        "sticky_offset_desktop": 30,
+        "sticky_offset_desktop": 0,
         "sticky_offset_mobile": 0,
         "sticky_z_index": 1000
       }
@@ -123,7 +123,7 @@
         "gap": 0,
         "sticky_desktop": true,
         "sticky_mobile_item": true,
-        "sticky_offset_desktop": 24,
+        "sticky_offset_desktop": 0,
         "sticky_offset_mobile": 0,
         "sticky_z_index": 1000
       }
