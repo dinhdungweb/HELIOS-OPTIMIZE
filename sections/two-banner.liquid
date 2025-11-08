@@ -3,7 +3,7 @@
 -%}
 
 <div id="section-id-{{ section.id }}" class="{% if section.settings.overlap_header %}header-overlap-section needs-alt-logo{% endif %}">
-<section class="{{ section_classes }}" data-section-id="{{ section.id }}">
+<section class="{{ section_classes }} {% if section.settings.sticky_desktop %}is-sticky-desktop{% endif %} {% if section.settings.sticky_mobile_item %}is-sticky-mobile{% endif %}" data-section-id="{{ section.id }}" style="--sticky-offset-desktop: {{ section.settings.sticky_offset_desktop | default: 0 }}px; --sticky-offset-mobile: {{ section.settings.sticky_offset_mobile | default: 0 }}px; --sticky-z-index: {{ section.settings.sticky_z_index | default: 1000 }};">
   <style>
     .two-banner--{{ section.id }} .two-banner__grid {display:grid; grid-template-columns:1fr; gap: {{ section.settings.gap | default: 16 }}px;}
     @media (min-width: 750px) {
@@ -17,16 +17,12 @@
     @media (min-width: 769px) {
       .two-banner--{{ section.id }} .two-banner__media { aspect-ratio: var(--ratio-desktop, var(--ratio-mobile, 1.7778)); }
     }
-    {% if section.settings.sticky_desktop %}
     @media (min-width: 769px) {
-      .two-banner--{{ section.id }} { position: sticky; top: {{ section.settings.sticky_offset_desktop | default: 0 }}px; z-index: {{ section.settings.sticky_z_index | default: 10 }}; }
+      .two-banner--{{ section.id }}.is-sticky-desktop { position: sticky; top: var(--sticky-offset-desktop, 0px); z-index: var(--sticky-z-index, 1000); }
     }
-    {% endif %}
-    {% if section.settings.sticky_mobile_item %}
     @media (max-width: 768px) {
-      .two-banner--{{ section.id }} .two-banner__item { position: sticky; top: {{ section.settings.sticky_offset_mobile | default: 0 }}px; z-index: {{ section.settings.sticky_z_index | default: 10 }}; }
+      .two-banner--{{ section.id }}.is-sticky-mobile .two-banner__item { position: sticky; top: var(--sticky-offset-mobile, 0px); z-index: var(--sticky-z-index, 1000); }
     }
-    {% endif %}
     .two-banner--{{ section.id }} .two-banner__overlay {position:absolute; inset:0; display:flex; justify-content:center; align-items:center; z-index:5; pointer-events:none;}
     .two-banner--{{ section.id }} .two-banner__overlay.h-left {justify-content:flex-start;}
     .two-banner--{{ section.id }} .two-banner__overlay.h-right {justify-content:flex-end;}
