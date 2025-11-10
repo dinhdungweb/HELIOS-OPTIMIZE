@@ -89,65 +89,6 @@
         "sticky_z_index": 1000
       }
     },
-    "two_banner_qNEPMY": {
-      "type": "two-banner",
-      "blocks": {
-        "banner_Nmp8fT": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/4-1.webp",
-            "video_url": "",
-            "video_loop": false,
-            "aspect_ratio_mobile": "2_3",
-            "aspect_ratio_desktop": "1_1",
-            "link": "shopify://collections/vong-tay-bac-nam",
-            "title": "VÒNG TAY BẠC",
-            "title_color": "#ffffff",
-            "title_bg": "rgba(0,0,0,0)",
-            "h_align": "center",
-            "v_align": "middle",
-            "text_align": "center",
-            "x_offset": 0,
-            "y_offset": 0,
-            "padding": 12
-          }
-        },
-        "banner_Adiycb": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/SRK00535.webp",
-            "video_url": "",
-            "video_loop": false,
-            "aspect_ratio_mobile": "2_3",
-            "aspect_ratio_desktop": "1_1",
-            "link": "shopify://collections/mat-day-chuyen-bac-s925",
-            "title": "MẶT DÂY CHUYỀN BẠC",
-            "title_color": "#ffffff",
-            "title_bg": "rgba(0,0,0,0)",
-            "h_align": "center",
-            "v_align": "middle",
-            "text_align": "center",
-            "x_offset": 0,
-            "y_offset": 0,
-            "padding": 12
-          }
-        }
-      },
-      "block_order": [
-        "banner_Nmp8fT",
-        "banner_Adiycb"
-      ],
-      "name": "Two Banners",
-      "settings": {
-        "overlap_header": true,
-        "gap": 0,
-        "sticky_desktop": true,
-        "sticky_mobile_item": true,
-        "sticky_offset_desktop": 0,
-        "sticky_offset_mobile": 0,
-        "sticky_z_index": 1000
-      }
-    },
     "two_banner_C3RzCw": {
       "type": "two-banner",
       "blocks": {
@@ -195,6 +136,65 @@
       "block_order": [
         "banner_CcYr6M",
         "banner_wnK37c"
+      ],
+      "name": "Two Banners",
+      "settings": {
+        "overlap_header": true,
+        "gap": 0,
+        "sticky_desktop": true,
+        "sticky_mobile_item": true,
+        "sticky_offset_desktop": 0,
+        "sticky_offset_mobile": 0,
+        "sticky_z_index": 1000
+      }
+    },
+    "two_banner_qNEPMY": {
+      "type": "two-banner",
+      "blocks": {
+        "banner_Nmp8fT": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/4-1.webp",
+            "video_url": "",
+            "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
+            "link": "shopify://collections/vong-tay-bac-nam",
+            "title": "VÒNG TAY BẠC",
+            "title_color": "#ffffff",
+            "title_bg": "rgba(0,0,0,0)",
+            "h_align": "center",
+            "v_align": "middle",
+            "text_align": "center",
+            "x_offset": 0,
+            "y_offset": 0,
+            "padding": 12
+          }
+        },
+        "banner_Adiycb": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/SRK00535.webp",
+            "video_url": "",
+            "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
+            "link": "shopify://collections/mat-day-chuyen-bac-s925",
+            "title": "MẶT DÂY CHUYỀN BẠC",
+            "title_color": "#ffffff",
+            "title_bg": "rgba(0,0,0,0)",
+            "h_align": "center",
+            "v_align": "middle",
+            "text_align": "center",
+            "x_offset": 0,
+            "y_offset": 0,
+            "padding": 12
+          }
+        }
+      },
+      "block_order": [
+        "banner_Nmp8fT",
+        "banner_Adiycb"
       ],
       "name": "Two Banners",
       "settings": {
@@ -339,8 +339,8 @@
   "order": [
     "background_video_responsive_RnWgY3",
     "two_banner_gUWcNj",
-    "two_banner_qNEPMY",
     "two_banner_C3RzCw",
+    "two_banner_qNEPMY",
     "two_banner_E4NazD",
     "featured_collection_WGhiFt",
     "image_with_text_zjajPx",
