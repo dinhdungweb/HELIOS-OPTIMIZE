@@ -57,6 +57,7 @@
     "show_sold_out_label": true,
     "show_new_label": true,
     "prod_new_method": "date",
+    "prod_new_limit_int": 17,
     "prod_label_layout": "standard",
     "collection_thumb_shape": "portrait_tall",
     "collection_image_position": "center",
