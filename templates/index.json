@@ -233,7 +233,7 @@
         "banner_d3ddye": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/SRK00771.webp",
+            "video": "shopify://files/videos/Quay xưởng bộ đức tin FAITH 29.mp4",
             "video_url": "",
             "video_loop": false,
             "aspect_ratio_mobile": "2_3",
@@ -290,6 +290,7 @@
     },
     "image_with_text_zjajPx": {
       "type": "image-with-text",
+      "disabled": true,
       "name": "Media with text",
       "settings": {
         "subheading": "",
