@@ -59,6 +59,8 @@
             "image": "shopify://shop_images/Artboard_5.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "",
             "title_color": "#ffffff",
@@ -77,6 +79,8 @@
             "video": "shopify://files/videos/Slide 1-Mobile (1).mp4",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "",
             "title_color": "#ffffff",
@@ -97,7 +101,12 @@
       "name": "Two Banners",
       "settings": {
         "overlap_header": true,
-        "gap": 0
+        "gap": 0,
+        "sticky_desktop": false,
+        "sticky_mobile_item": false,
+        "sticky_offset_desktop": 0,
+        "sticky_offset_mobile": 0,
+        "sticky_z_index": 1000
       }
     },
     "featured_collection_Tib9zr": {
@@ -131,6 +140,8 @@
             "image": "shopify://shop_images/Artboard_2.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "",
             "title_color": "#ffffff",
@@ -149,6 +160,8 @@
             "video": "shopify://files/videos/Slide 2-Mobile.mp4",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "",
             "title_color": "#ffffff",
@@ -169,7 +182,12 @@
       "name": "Two Banners",
       "settings": {
         "overlap_header": true,
-        "gap": 0
+        "gap": 0,
+        "sticky_desktop": false,
+        "sticky_mobile_item": false,
+        "sticky_offset_desktop": 0,
+        "sticky_offset_mobile": 0,
+        "sticky_z_index": 1000
       }
     },
     "background_video_responsive_Y7riqe": {
@@ -224,6 +242,8 @@
             "image": "shopify://shop_images/Artboard_1.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "",
             "title_color": "#ffffff",
@@ -242,6 +262,8 @@
             "video": "shopify://files/videos/Slide 3-Mobile (1).mp4",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "",
             "title_color": "#ffffff",
@@ -262,7 +284,12 @@
       "name": "Two Banners",
       "settings": {
         "overlap_header": true,
-        "gap": 0
+        "gap": 0,
+        "sticky_desktop": false,
+        "sticky_mobile_item": false,
+        "sticky_offset_desktop": 0,
+        "sticky_offset_mobile": 0,
+        "sticky_z_index": 1000
       }
     },
     "featured_collection_NMz84T": {
@@ -317,6 +344,8 @@
             "image": "shopify://shop_images/Artboard_11.jpg",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "",
             "title_color": "#ffffff",
@@ -335,6 +364,8 @@
             "video": "shopify://files/videos/Slide 5-mobile.mp4",
             "video_url": "",
             "video_loop": false,
+            "aspect_ratio_mobile": "2_3",
+            "aspect_ratio_desktop": "1_1",
             "link": "",
             "title": "",
             "title_color": "#ffffff",
@@ -355,7 +386,12 @@
       "name": "Two Banners",
       "settings": {
         "overlap_header": true,
-        "gap": 0
+        "gap": 0,
+        "sticky_desktop": false,
+        "sticky_mobile_item": false,
+        "sticky_offset_desktop": 0,
+        "sticky_offset_mobile": 0,
+        "sticky_z_index": 1000
       }
     }
   },
