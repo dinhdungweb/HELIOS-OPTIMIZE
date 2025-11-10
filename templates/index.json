@@ -268,6 +268,29 @@
         "show_view_all": false
       }
     },
+    "image_with_text_zjajPx": {
+      "type": "image-with-text",
+      "name": "Media with text",
+      "settings": {
+        "subheading": "",
+        "title": "FAITH COLLECTION",
+        "title_size": 28,
+        "title_width": 12,
+        "text": "<p>Mỗi sản phẩm trong BST Đức Tin là kết quả của một hành trình nơi tư duy sáng tạo của những nhà thiết kế trẻ gặp gỡ bàn tay khéo léo của những người thợ lành nghề.</p>",
+        "button_label": "",
+        "button_link": "",
+        "text_alignment": "center",
+        "text_width": 50,
+        "button_style": "auto",
+        "video_shopify": "shopify://files/videos/Quay xưởng bộ đức tin FAITH 29.mp4",
+        "image_width": 100,
+        "image_position": "right",
+        "media_size": "contain",
+        "color_scheme": "standard",
+        "color_bg": "",
+        "color_text": ""
+      }
+    },
     "background_video_NCMV83": {
       "type": "background-video",
       "settings": {
@@ -297,6 +320,7 @@
     "two_banner_C3RzCw",
     "two_banner_E4NazD",
     "featured_collection_mkMCHL",
+    "image_with_text_zjajPx",
     "background_video_NCMV83"
   ]
 }
