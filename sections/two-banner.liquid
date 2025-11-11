@@ -162,6 +162,80 @@
 </section>
 </div>
 
+<script>
+  (function() {
+    const sectionId = '{{ section.id }}';
+    const section = document.querySelector('[data-section-id="' + sectionId + '"]');
+    if (!section) return;
+    
+    const grid = section.querySelector('.two-banner__grid');
+    if (!grid) return;
+    
+    const isDesktop = () => window.innerWidth >= 769;
+    const getNavHeight = () => {
+      const root = document.documentElement;
+      return parseFloat(getComputedStyle(root).getPropertyValue('--nav-height')) || 0;
+    };
+    
+    const updateSticky = () => {
+      const navHeight = getNavHeight();
+      const offset = isDesktop() ? 
+        (parseInt(section.style.getPropertyValue('--sticky-offset-desktop')) || 0) :
+        (parseInt(section.style.getPropertyValue('--sticky-offset-mobile')) || 0);
+      
+      const topValue = navHeight + offset;
+      const zIndex = parseInt(section.style.getPropertyValue('--sticky-z-index')) || 1000;
+      
+      if (isDesktop() && section.classList.contains('is-sticky-desktop')) {
+        // Desktop: sticky entire section
+        section.style.position = 'sticky';
+        section.style.top = topValue + 'px';
+        section.style.zIndex = zIndex;
+        section.style.maxHeight = 'calc(100vh - ' + navHeight + 'px)';
+        section.style.overflowY = 'auto';
+      } else if (!isDesktop() && section.classList.contains('is-sticky-mobile')) {
+        // Mobile: remove sticky from section
+        section.style.position = 'static';
+        section.style.top = 'auto';
+        section.style.maxHeight = 'none';
+        section.style.overflowY = 'visible';
+        
+        // Add sticky to items
+        const items = grid.querySelectorAll('.two-banner__item');
+        items.forEach(item => {
+          item.style.position = 'sticky';
+          item.style.top = topValue + 'px';
+          item.style.zIndex = zIndex;
+        });
+      } else {
+        // Remove sticky
+        section.style.position = 'static';
+        section.style.top = 'auto';
+        section.style.maxHeight = 'none';
+        section.style.overflowY = 'visible';
+        
+        const items = grid.querySelectorAll('.two-banner__item');
+        items.forEach(item => {
+          item.style.position = 'relative';
+          item.style.top = 'auto';
+        });
+      }
+    };
+    
+    updateSticky();
+    window.addEventListener('resize', updateSticky);
+    window.addEventListener('scroll', () => {
+      const navHeight = getNavHeight();
+      if (navHeight !== lastNavHeight) {
+        lastNavHeight = navHeight;
+        updateSticky();
+      }
+    });
+    
+    let lastNavHeight = getNavHeight();
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Two Banners",
