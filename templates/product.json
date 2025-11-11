@@ -238,7 +238,7 @@
         "image": "shopify://shop_images/che-tac-thu-cong.webp",
         "image_width": 100,
         "image_position": "left",
-        "media_size": "contain",
+        "media_size": "cover",
         "color_scheme": "custom",
         "color_bg": "#0c0c0c",
         "color_text": ""
