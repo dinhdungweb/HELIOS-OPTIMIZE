@@ -11,18 +11,29 @@
       .two-banner--{{ section.id }} .two-banner__grid {grid-template-columns: 1fr 1fr;}
     }
     .two-banner--{{ section.id }} .two-banner__item { position: relative; }
-    .two-banner--{{ section.id }}.is-sticky-desktop .two-banner__item {
-      position: -webkit-sticky;
-      position: sticky;
-      top: var(--sticky-offset-desktop, 0px);
-      z-index: var(--sticky-z-index, 1000);
+    
+    /* Mobile sticky */
+    @media (max-width: 768px) {
+      .two-banner--{{ section.id }}.is-sticky-mobile .two-banner__item {
+        position: -webkit-sticky;
+        position: sticky;
+        top: calc(var(--nav-height, 0px) + var(--sticky-offset-mobile, 0px));
+        z-index: var(--sticky-z-index, 1000);
+      }
     }
-    .two-banner--{{ section.id }}.is-sticky-mobile .two-banner__item {
-      position: -webkit-sticky;
-      position: sticky;
-      top: var(--sticky-offset-mobile, 0px);
-      z-index: var(--sticky-z-index, 1000);
+    
+    /* Desktop sticky - each item sticky independently */
+    @media (min-width: 769px) {
+      .two-banner--{{ section.id }}.is-sticky-desktop .two-banner__item {
+        position: -webkit-sticky;
+        position: sticky;
+        top: calc(var(--nav-height, 0px) + var(--sticky-offset-desktop, 0px));
+        z-index: var(--sticky-z-index, 1000);
+        max-height: calc(100vh - var(--nav-height, 0px));
+        overflow-y: auto;
+      }
     }
+    
     .two-banner--{{ section.id }} .two-banner__media-wrapper {overflow: hidden;}
     .two-banner--{{ section.id }} .two-banner__media img,
     .two-banner--{{ section.id }} .two-banner__media video,
