@@ -57,10 +57,15 @@
               class="form-select"
               {% if block.settings.required %}required{% endif %}>
               <option value="">-- Chọn --</option>
-              {% assign options = block.settings.options | split: newline %}
+              {% assign separator = newline %}
+              {% if block.settings.options contains ',' %}
+                {% assign separator = ',' %}
+              {% endif %}
+              {% assign options = block.settings.options | split: separator %}
               {% for option in options %}
+                {% assign option = option | strip %}
                 {% if option != blank %}
-                  <option value="{{ option | strip }}">{{ option | strip }}</option>
+                  <option value="{{ option }}">{{ option }}</option>
                 {% endif %}
               {% endfor %}
             </select>
@@ -71,18 +76,23 @@
                 {{ block.settings.label }}
                 {% if block.settings.required %}<span class="required">*</span>{% endif %}
               </legend>
-              {% assign options = block.settings.options | split: newline %}
+              {% assign separator = newline %}
+              {% if block.settings.options contains ',' %}
+                {% assign separator = ',' %}
+              {% endif %}
+              {% assign options = block.settings.options | split: separator %}
               {% for option in options %}
+                {% assign option = option | strip %}
                 {% if option != blank %}
                   <div class="checkbox-group">
                     <input 
                       type="checkbox" 
                       id="checkbox-{{ block.id }}-{{ forloop.index }}" 
                       name="{{ block.settings.entry }}" 
-                      value="{{ option | strip }}"
+                      value="{{ option }}"
                       class="form-checkbox">
                     <label for="checkbox-{{ block.id }}-{{ forloop.index }}" class="checkbox-label">
-                      {{ option | strip }}
+                      {{ option }}
                     </label>
                   </div>
                 {% endif %}
@@ -95,19 +105,24 @@
                 {{ block.settings.label }}
                 {% if block.settings.required %}<span class="required">*</span>{% endif %}
               </legend>
-              {% assign options = block.settings.options | split: newline %}
+              {% assign separator = newline %}
+              {% if block.settings.options contains ',' %}
+                {% assign separator = ',' %}
+              {% endif %}
+              {% assign options = block.settings.options | split: separator %}
               {% for option in options %}
+                {% assign option = option | strip %}
                 {% if option != blank %}
                   <div class="radio-group">
                     <input 
                       type="radio" 
                       id="radio-{{ block.id }}-{{ forloop.index }}" 
                       name="{{ block.settings.entry }}" 
-                      value="{{ option | strip }}"
+                      value="{{ option }}"
                       class="form-radio"
                       {% if block.settings.required %}required{% endif %}>
                     <label for="radio-{{ block.id }}-{{ forloop.index }}" class="radio-label">
-                      {{ option | strip }}
+                      {{ option }}
                     </label>
                   </div>
                 {% endif %}
