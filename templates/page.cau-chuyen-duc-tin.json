@@ -41,7 +41,7 @@
           "settings": {
             "label": "Lựa chọn của bạn",
             "entry": "",
-            "options": "Private, Public nhưng ẩn danh",
+            "options": "Private,Public nhưng ẩn danh",
             "required": false
           }
         }
