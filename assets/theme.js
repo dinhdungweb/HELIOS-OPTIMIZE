@@ -1,3 +1,47 @@
+// Performance: oEmbed Cache Helper
+const OEmbedCache = {
+  storageName: 'helios_oembed_cache',
+  cacheDuration: 24 * 60 * 60 * 1000, // 24 hours
+  
+  get: function(url) {
+    try {
+      const cache = JSON.parse(localStorage.getItem(this.storageName) || '{}');
+      const cached = cache[url];
+      if (cached && cached.expires > Date.now()) {
+        return Promise.resolve(cached.data);
+      } else if (cached) {
+        // Expired, remove it
+        delete cache[url];
+        localStorage.setItem(this.storageName, JSON.stringify(cache));
+      }
+    } catch(e) {
+      console.warn('oEmbed cache read error:', e);
+    }
+    return null;
+  },
+  
+  set: function(url, data) {
+    try {
+      const cache = JSON.parse(localStorage.getItem(this.storageName) || '{}');
+      cache[url] = {
+        data: data,
+        expires: Date.now() + this.cacheDuration
+      };
+      localStorage.setItem(this.storageName, JSON.stringify(cache));
+    } catch(e) {
+      console.warn('oEmbed cache write error:', e);
+    }
+  },
+  
+  clear: function() {
+    try {
+      localStorage.removeItem(this.storageName);
+    } catch(e) {
+      console.warn('oEmbed cache clear error:', e);
+    }
+  }
+};
+
 // Mở ngăn kéo giỏ hàng
 function openCartDrawer() {
     const cartDrawer = document.querySelector(".cart-drawer");
@@ -1954,21 +1998,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         $videoElement.attr('src', src);
 
-        fetch('https://www.youtube.com/oembed?format=json&url=' + encodeURIComponent($(this).data('video-url'))).
-        then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          return response.json();
-        }).
-        then((response) => {
-          if (response.width && response.height) {
-            $videoElement.attr({ width: response.width, height: response.height });
-            if (_.videos.videoData[containerId].assessBackgroundVideo) {
-              _.videos.videoData[containerId].assessBackgroundVideo();
+        // Optimized: Use oEmbed cache
+        const videoUrl = $(this).data('video-url');
+        const cachedData = OEmbedCache.get(videoUrl);
+        
+        if (cachedData) {
+          cachedData.then(response => {
+            if (response && response.width && response.height) {
+              $videoElement.attr({ width: response.width, height: response.height });
+              if (_.videos.videoData[containerId].assessBackgroundVideo) {
+                _.videos.videoData[containerId].assessBackgroundVideo();
+              }
             }
-          }
-        });
+          });
+        } else {
+          fetch('https://www.youtube.com/oembed?format=json&url=' + encodeURIComponent(videoUrl)).
+          then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          }).
+          then((response) => {
+            // Cache the response
+            OEmbedCache.set(videoUrl, response);
+            
+            if (response.width && response.height) {
+              $videoElement.attr({ width: response.width, height: response.height });
+              if (_.videos.videoData[containerId].assessBackgroundVideo) {
+                _.videos.videoData[containerId].assessBackgroundVideo();
+              }
+            }
+          }).
+          catch(error => {
+            console.warn('YouTube oEmbed fetch failed:', error);
+          });
+        }
       });
     };
 
@@ -2058,21 +2123,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         $videoElement.attr('src', src);
 
-        fetch('https://vimeo.com/api/oembed.json?url=' + encodeURIComponent($(this).data('video-url'))).
-        then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          return response.json();
-        }).
-        then((response) => {
-          if (response.width && response.height) {
-            $videoElement.attr({ width: response.width, height: response.height });
-            if (_.videos.videoData[containerId].assessBackgroundVideo) {
-              _.videos.videoData[containerId].assessBackgroundVideo();
+        // Optimized: Use oEmbed cache for Vimeo
+        const vimeoUrl = $(this).data('video-url');
+        const vimeoCachedData = OEmbedCache.get(vimeoUrl);
+        
+        if (vimeoCachedData) {
+          vimeoCachedData.then(response => {
+            if (response && response.width && response.height) {
+              $videoElement.attr({ width: response.width, height: response.height });
+              if (_.videos.videoData[containerId].assessBackgroundVideo) {
+                _.videos.videoData[containerId].assessBackgroundVideo();
+              }
             }
-          }
-        });
+          });
+        } else {
+          fetch('https://vimeo.com/api/oembed.json?url=' + encodeURIComponent(vimeoUrl)).
+          then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          }).
+          then((response) => {
+            // Cache the response
+            OEmbedCache.set(vimeoUrl, response);
+            
+            if (response.width && response.height) {
+              $videoElement.attr({ width: response.width, height: response.height });
+              if (_.videos.videoData[containerId].assessBackgroundVideo) {
+                _.videos.videoData[containerId].assessBackgroundVideo();
+              }
+            }
+          }).
+          catch(error => {
+            console.warn('Vimeo oEmbed fetch failed:', error);
+          });
+        }
       });
     };
 
@@ -4490,17 +4576,25 @@ document.addEventListener("DOMContentLoaded", () => {
             lazySizes.autoSizer.checkElems();
             $swiperCont.find('.swiper-slide-active .lazyload--manual').removeClass('lazyload--manual').addClass('lazyload');
 
-            // Giảm thời gian chờ để tải hình ảnh lazy nhanh hơn
-            let lazyLoadDelay = 200;
-
-            if (theme.viewport.isXs()) {
-              lazyLoadDelay = LocalStorageUtil.get('is_first_visit') === null ? 1000 : 500;
+            // Optimized: Use Intersection Observer instead of setTimeout
+            const manualLazyElements = $swiperCont.find('.lazyload--manual');
+            if (manualLazyElements.length > 0) {
+              if ('IntersectionObserver' in window) {
+                const lazyObserver = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      $(entry.target).removeClass('lazyload--manual').addClass('lazyload');
+                      lazyObserver.unobserve(entry.target);
+                    }
+                  });
+                }, { rootMargin: '50px' });
+                
+                manualLazyElements.each((i, el) => lazyObserver.observe(el));
+              } else {
+                // Fallback: immediate load for older browsers
+                manualLazyElements.removeClass('lazyload--manual').addClass('lazyload');
+              }
             }
-
-            //Tải tất cả hình ảnh trong slider nhanh hơn
-            setTimeout(function () {
-              $swiperCont.find('.lazyload--manual').removeClass('lazyload--manual').addClass('lazyload');
-            }, lazyLoadDelay);
 
             //Hack for iPhone X - where loading the page on slower connection sometimes causes Swiper to steal focus
             if (theme.viewport.isXs() && $('.product-detail__form__options a:not(.size-chart-link)').length && !isCarouselLayout) {
@@ -4618,6 +4712,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       //Fixes bug where the last slide gets cut off if its a model
+      // Optimized: Reduce delay for faster layout update
       setTimeout(function () {
         $(window).trigger('resize');
 
@@ -4636,7 +4731,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isCarouselLayout) {
           _this.slideshowTabFix();
         }
-      }, isCarouselLayout ? 1000 : 500); // Giảm từ 3000 xuống 1000 và từ 1000 xuống 500
+      }, isCarouselLayout ? 300 : 100); // Optimized: Reduced delays (was 1000/500)
     }
 
     function destroySwiper() {
@@ -4707,12 +4802,25 @@ document.addEventListener("DOMContentLoaded", () => {
       $(this).on('init', function () {
         $('.slick-current .lazyload--manual', this).removeClass('lazyload--manual').addClass('lazyload');
 
-        //Lazyload all slide images after a few seconds
-        $(function () {
-          setTimeout(() => {
-            $('.lazyload--manual', this).removeClass('lazyload--manual').addClass('lazyload');
-          }, LocalStorageUtil.get('is_first_visit') === null ? 5000 : 2000);
-        });
+        // Optimized: Use Intersection Observer instead of setTimeout
+        const lazyElements = $('.lazyload--manual', this);
+        if (lazyElements.length) {
+          if ('IntersectionObserver' in window) {
+            const lazyObserver = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  $(entry.target).removeClass('lazyload--manual').addClass('lazyload');
+                  lazyObserver.unobserve(entry.target);
+                }
+              });
+            }, { rootMargin: '50px' });
+            
+            lazyElements.each((i, el) => lazyObserver.observe(el));
+          } else {
+            // Fallback for older browsers: immediate load
+            lazyElements.removeClass('lazyload--manual').addClass('lazyload');
+          }
+        }
 
       }).slick({
         autoplay: $(this).data('autoplay'),
