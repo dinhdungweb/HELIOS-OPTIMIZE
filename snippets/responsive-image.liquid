@@ -13,24 +13,42 @@
 >
   <div class="rimage-wrapper lazyload--placeholder" style="padding-top:{{ 1 | divided_by: aspect_ratio | times: 100 }}%">
     {% if initial %}
-      <img class="rimage__image lazyload fade-in {% if cover %}cover{% endif %}" data-src="{{ image | img_url: initial }}" alt="{{ image.alt | escape }}">
+      <!-- Optimized: Use native lazy loading -->
+      <img class="rimage__image fade-in {% if cover %}cover{% endif %}" 
+        src="{{ image | image_url: width: 200 }}" 
+        alt="{{ image.alt | escape }}"
+        loading="eager"
+        width="{{ image.width }}"
+        height="{{ image.height }}">
       {% assign initial = false %}
     {% endif %}
-    {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-    <img class="rimage__image lazyload{% if manual_image_load %}--manual{% endif %} fade-in {% if cover %}cover{% endif %}"
-      data-src="{{ img_url }}"
-      data-widths="[460, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-      data-aspectratio="{{ image.aspect_ratio }}"
-      data-sizes="auto"
+    
+    <!-- Optimized: Native lazy loading with responsive srcset -->
+    <img class="rimage__image fade-in {% if cover %}cover{% endif %}"
+      src="{{ image | image_url: width: 800 }}"
+      srcset="{{ image | image_url: width: 480 }} 480w,
+              {{ image | image_url: width: 720 }} 720w,
+              {{ image | image_url: width: 1024 }} 1024w,
+              {{ image | image_url: width: 1280 }} 1280w,
+              {{ image | image_url: width: 1600 }} 1600w"
+      sizes="(max-width: 480px) 100vw,
+             (max-width: 768px) 90vw,
+             (max-width: 1024px) 80vw,
+             70vw"
       alt="{{ image.alt | escape }}"
+      loading="lazy"
+      decoding="async"
       width="{{ image.width }}"
       height="{{ image.height }}"
-      {% if cover %}data-parent-fit="cover"{% endif %}
+      {% if cover %}class="cover"{% endif %}
       {% if image.presentation %}style="object-position: {{ image.presentation.focal_point }}"{% endif %}>
 
     <noscript>
-      {% assign img_url = image | img_url: '1024x1024' %}
-      <img src="{{ img_url }}" alt="{{ image.alt | escape }}" class="rimage__image">
+      <img src="{{ image | image_url: width: 1024 }}" 
+           alt="{{ image.alt | escape }}" 
+           class="rimage__image"
+           width="{{ image.width }}"
+           height="{{ image.height }}">
     </noscript>
   </div>
 </div>
