@@ -35,10 +35,62 @@
         "form_action_entry6": "dghdghdfg",
         "form_action_button": "Gửi"
       }
+    },
+    "advanced_form_to_sheet_emReh9": {
+      "type": "advanced-form-to-sheet",
+      "blocks": {
+        "text_field_nLMx8i": {
+          "type": "text_field",
+          "settings": {
+            "label": "Email",
+            "entry": "",
+            "placeholder": "Email của bạn",
+            "required": true,
+            "input_type": "email"
+          }
+        },
+        "checkbox_field_3Wqkac": {
+          "type": "checkbox_field",
+          "settings": {
+            "label": "Chọn các tùy chọn",
+            "entry": "",
+            "options": "Private, Public nhưng ẩn danh",
+            "required": false
+          }
+        },
+        "textarea_field_A7FFXq": {
+          "type": "textarea_field",
+          "settings": {
+            "label": "Nội dung",
+            "entry": "",
+            "placeholder": "Viết cho chính bạn của tương lai...",
+            "required": true
+          }
+        }
+      },
+      "block_order": [
+        "text_field_nLMx8i",
+        "checkbox_field_3Wqkac",
+        "textarea_field_A7FFXq"
+      ],
+      "name": "Advanced Form to Sheet",
+      "settings": {
+        "form-title": "Liên hệ với chúng tôi",
+        "form-subtitle": "",
+        "form-description": "<p>Vui lòng điền thông tin để liên hệ với chúng tôi</p>",
+        "banner_image": "shopify://shop_images/archie-helios-black-silver-len-mau.jpg",
+        "banner_position": "left",
+        "form_action_url": "",
+        "success_message": "Gửi thành công! Cảm ơn bạn.",
+        "error_message": "Gửi thất bại. Vui lòng thử lại!",
+        "button_text": "Gửi",
+        "button_color": "#FAB320"
+      }
     }
   },
   "order": [
     "main",
-    "contact_form_to_sheet_6bWA3R"
+    "contact_form_to_sheet_6bWA3R",
+    "advanced_form_to_sheet_emReh9"
   ]
 }
