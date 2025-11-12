@@ -13,13 +13,6 @@
           <div class="flex">
             <input type="text" id="name" name="{{ cf-entry1 }}" placeholder="{{ cf-placeholder1 }}" required>
             <input type="number" id="tel" name="{{ cf-entry2 }}" placeholder="{{ cf-placeholder2 }}">
-            {% if cf-entry6 != "" %}
-            <label for="dropdown-form">Lựa chọn của bạn?</label>
-            <select id="dropdown-form" name="{{ cf-entry6 }}">
-              <option value="Private">Private</option>
-              <option value="Public nhưng ẩn danh">Public nhưng ẩn danh</option>
-            </select>
-            {% endif %}
           </div>
           {% endif %}
           {% if cf-placeholder3 != "" %}
@@ -30,6 +23,13 @@
           {% endif %}
           {% if cf-placeholder5 != "" %}
           <textarea id="message" name="{{ cf-entry5 }}" placeholder="{{ cf-placeholder5 }}"></textarea>
+          {% endif %}
+          {% if cf-entry6 != "" %}
+          <label for="dropdown-form">Lựa chọn của bạn?</label>
+          <select id="dropdown-form" name="{{ cf-entry6 }}">
+            <option value="Private">Private</option>
+            <option value="Public nhưng ẩn danh">Public nhưng ẩn danh</option>
+          </select>
           {% endif %}
           <div class="d-flex jc-center mt-30">
             <button id="send-form-to-sheet-letter" type="submit">{{ cf-button }}</button>
