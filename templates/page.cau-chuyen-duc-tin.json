@@ -61,7 +61,7 @@
         "form_action_url": "",
         "success_message": "Gửi thành công! Cảm ơn bạn.",
         "error_message": "Gửi thất bại. Vui lòng thử lại!",
-        "button_text": "Gửi",
+        "button_text": "Gửi đi",
         "button_color": "#fab320"
       }
     }
