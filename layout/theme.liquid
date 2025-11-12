@@ -32,6 +32,9 @@
     {{ logo_font | font_face: font_display: 'swap' }}
   </style>
 
+  <!-- Inline Critical CSS for FCP optimization -->
+  {{ 'critical.css' | asset_url | stylesheet_tag }}
+
   <meta name="theme-color" content="{{ settings.col_btn_bg }}">
 
   <title>
@@ -347,6 +350,33 @@
 // };
 
   </script>
+
+  <!-- Defer non-critical CSS loading -->
+  <script>
+    (function() {
+      var nonCriticalCSS = [
+        'theme-addons.css',
+        'judgeme-reviews.css.liquid',
+        'account.css.liquid'
+      ];
+      
+      nonCriticalCSS.forEach(function(cssFile) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = window.Shopify.routes.root + 'assets/' + cssFile;
+        link.media = 'print';
+        link.onload = function() { 
+          this.media = 'all';
+          this.removeAttribute('onload');
+        };
+        link.onerror = function() {
+          console.warn('Failed to load: ' + cssFile);
+        };
+        document.head.appendChild(link);
+      });
+    })();
+  </script>
+
   <script src="{{ 'vendor.min.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'theme-addons.js' | asset_url }}" defer="defer"></script>

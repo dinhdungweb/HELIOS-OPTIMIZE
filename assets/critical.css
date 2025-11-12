@@ -1,0 +1,361 @@
+/**
+ * CRITICAL CSS - Above the fold only
+ * Inline this CSS to improve FCP (First Contentful Paint)
+ * Keep this file under 15KB (gzipped)
+ */
+
+/* ============================================
+   CORE LAYOUT & RESET
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif);
+  font-size: var(--font-body-size, 1rem);
+  line-height: var(--font-body-line-height, 1.6);
+  color: var(--color-text, #333);
+  background: var(--color-background, #fff);
+}
+
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+header, nav {
+  display: block;
+}
+
+header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+
+nav {
+  width: 100%;
+}
+
+a {
+  color: var(--color-link, #0066cc);
+  text-decoration: none;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+main {
+  display: block;
+  width: 100%;
+}
+
+section {
+  display: block;
+  width: 100%;
+}
+
+/* ============================================
+   HERO / SLIDESHOW
+   ============================================ */
+.hero, .slideshow, .banner {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--color-bg-secondary, #f5f5f5);
+}
+
+.hero img, .slideshow img, .banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ============================================
+   CONTAINER & GRID
+   ============================================ */
+.container, .section {
+  width: 100%;
+  max-width: var(--width-max-container, 1200px);
+  margin: 0 auto;
+  padding: var(--spacing-gutter, 20px);
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-gap, 20px);
+}
+
+/* Mobile: 1 column */
+.grid {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3+ columns */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   BUTTONS & FORMS
+   ============================================ */
+button, a.button, input[type="button"], input[type="submit"] {
+  display: inline-block;
+  padding: var(--spacing-button-padding, 12px 24px);
+  background-color: var(--color-button, #000);
+  color: var(--color-button-text, #fff);
+  border: none;
+  border-radius: var(--radius-button, 4px);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+button:hover, a.button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+input, textarea, select {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin: var(--spacing-section, 20px) 0 10px 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1, 2.5rem);
+}
+
+h2 {
+  font-size: var(--font-size-h2, 2rem);
+}
+
+h3 {
+  font-size: var(--font-size-h3, 1.5rem);
+}
+
+p {
+  margin: 0 0 var(--spacing-paragraph, 15px) 0;
+}
+
+/* ============================================
+   IMAGES & MEDIA
+   ============================================ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Loading state */
+img.lazyload {
+  opacity: 0.5;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  animation: loading 2s infinite;
+}
+
+img.loaded {
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ============================================
+   PRODUCT BASICS (Critical)
+   ============================================ */
+.product-item {
+  display: block;
+  background: var(--color-product-bg, #fff);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-image {
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-bg-secondary, #f5f5f5);
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-info {
+  padding: var(--spacing-product-padding, 15px);
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-sale, #e53e3e);
+}
+
+/* ============================================
+   CART / CHECKOUT
+   ============================================ */
+.cart-drawer, .cart-content {
+  background: var(--color-bg, #fff);
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: 4px;
+}
+
+.cart-item {
+  padding: 15px;
+  border-bottom: 1px solid var(--color-border, #ddd);
+  display: flex;
+  gap: 15px;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 0.6s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   PRELOAD / LOADING STATES
+   ============================================ */
+.loading {
+  overflow: hidden;
+}
+
+.loading * {
+  animation-play-state: paused !important;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+
+.preloader.hidden {
+  display: none;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE FIRST
+   ============================================ */
+
+/* Tablet */
+@media (min-width: 640px) {
+  .container, .section {
+    padding: var(--spacing-gutter, 30px);
+  }
+  
+  h1 {
+    font-size: var(--font-size-h1, 2rem);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container, .section {
+    padding: var(--spacing-gutter, 40px);
+  }
+  
+  h1 {
+    font-size: var(--font-size-h1, 2.5rem);
+  }
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+@media print {
+  header, nav, footer {
+    display: none;
+  }
+}
