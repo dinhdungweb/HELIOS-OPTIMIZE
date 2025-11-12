@@ -1,7 +1,7 @@
 <div class="advanced-form-wrapper" data-banner-position="{{ af-banner-position }}">
   {% if af-banner-image and af-banner-position != 'none' %}
     <div class="advanced-form-banner">
-      <img src="{{ af-banner-image | image_url: width: 600 }}" alt="Form Banner" class="form-banner-img" id="zoomableImage">
+      <img src="{{ af-banner-image | image_url: width: 600 }}" alt="Form Banner" class="form-banner-img">
     </div>
   {% endif %}
 
@@ -141,12 +141,6 @@
       <div id="form-message" class="form-message" style="display: none;"></div>
     </form>
   </div>
-</div>
-
-<!-- Image Zoom Modal -->
-<div class="image-zoom-overlay" id="imageZoomOverlay">
-  <button class="close-btn" id="closeZoom">&times;</button>
-  <img src="" alt="Zoomed Image" id="zoomedImage">
 </div>
 
 <style>
@@ -344,52 +338,6 @@
     border: 1px solid #f5c6cb;
   }
 
-  /* Image Zoom Modal */
-  .image-zoom-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 99999;
-    padding: 20px;
-  }
-
-  .image-zoom-overlay img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .image-zoom-overlay .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #fff;
-    color: #333;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 28px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-
-  .image-zoom-overlay .close-btn:hover {
-    background: #ff5e57;
-    color: #fff;
-    transform: rotate(90deg);
-  }
-
   /* Responsive */
   @media (max-width: 768px) {
     .advanced-form-wrapper {
@@ -456,29 +404,5 @@
           messageDiv.style.display = "block";
         });
     });
-
-    // Image zoom functionality
-    const zoomableImage = document.getElementById("zoomableImage");
-    const imageZoomOverlay = document.getElementById("imageZoomOverlay");
-    const zoomedImage = document.getElementById("zoomedImage");
-    const closeZoom = document.getElementById("closeZoom");
-
-    if (zoomableImage) {
-      zoomableImage.addEventListener("click", function () {
-        const imgSrc = zoomableImage.getAttribute("src");
-        zoomedImage.setAttribute("src", imgSrc);
-        imageZoomOverlay.style.display = "flex";
-      });
-
-      closeZoom.addEventListener("click", function () {
-        imageZoomOverlay.style.display = "none";
-      });
-
-      imageZoomOverlay.addEventListener("click", function (event) {
-        if (event.target === imageZoomOverlay) {
-          imageZoomOverlay.style.display = "none";
-        }
-      });
-    }
   });
 </script>
