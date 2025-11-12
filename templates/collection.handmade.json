@@ -78,6 +78,29 @@
         "color_text": ""
       }
     },
+    "rich_text_qnnqKP": {
+      "type": "rich-text",
+      "name": "Rich text",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "title_size": 48,
+        "title_width": 12,
+        "heading_h1": false,
+        "text": "<p>HELIOS khởi tạo hình hài, nhưng chính bạn sẽ hoàn thiện chế tác bằng những vết xước trên hành trình của riêng mình, để nó trở thành minh chứng cho bản lĩnh và câu chuyện bạn mang theo.</p>",
+        "image_width": 120,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "auto",
+        "text_alignment": "center",
+        "enlarge_text": true,
+        "full_width": false,
+        "no_padding_bottom": false,
+        "color_scheme": "standard",
+        "color_bg": "",
+        "color_text": ""
+      }
+    },
     "main": {
       "type": "main-collection",
       "settings": {
@@ -107,6 +130,7 @@
     "rich_text_KzfRiG",
     "image_with_text_yhnmpF",
     "image_with_text_Hf7yQW",
+    "rich_text_qnnqKP",
     "main"
   ]
 }
