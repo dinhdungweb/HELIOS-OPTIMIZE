@@ -9,6 +9,27 @@
  */
 {
   "sections": {
+    "background_video_responsive_4AmgFJ": {
+      "type": "background-video-responsive",
+      "name": "Video responsive",
+      "settings": {
+        "video_full_vh": false,
+        "video_height_desktop": 500,
+        "video_height_mobile": 450,
+        "video_link": "",
+        "video_link_new_tab": false,
+        "video_shopify_desktop": "shopify://files/videos/Edit video ngang cho landing page Chế tác 19x5 (2).mp4",
+        "video_external_desktop": "",
+        "video_shopify_mobile": "shopify://files/videos/Edit video ngang cho landing page Chế tác 1x1 (1).mp4",
+        "video_external_mobile": "",
+        "subtitle": "",
+        "title": "",
+        "title_image_width_desktop": 800,
+        "description": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
     "rich_text_KzfRiG": {
       "type": "rich-text",
       "name": "Rich text",
@@ -127,6 +148,7 @@
     }
   },
   "order": [
+    "background_video_responsive_4AmgFJ",
     "rich_text_KzfRiG",
     "image_with_text_yhnmpF",
     "image_with_text_Hf7yQW",
