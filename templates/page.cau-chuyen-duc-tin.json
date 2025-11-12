@@ -27,15 +27,6 @@
             "input_type": "email"
           }
         },
-        "checkbox_field_3Wqkac": {
-          "type": "checkbox_field",
-          "settings": {
-            "label": "Chọn các tùy chọn",
-            "entry": "",
-            "options": "Private, Public nhưng ẩn danh",
-            "required": false
-          }
-        },
         "textarea_field_A7FFXq": {
           "type": "textarea_field",
           "settings": {
@@ -44,12 +35,21 @@
             "placeholder": "Viết cho chính bạn của tương lai...",
             "required": true
           }
+        },
+        "checkbox_field_3Wqkac": {
+          "type": "checkbox_field",
+          "settings": {
+            "label": "Lựa chọn của bạn",
+            "entry": "",
+            "options": "Private, Public nhưng ẩn danh",
+            "required": false
+          }
         }
       },
       "block_order": [
         "text_field_nLMx8i",
-        "checkbox_field_3Wqkac",
-        "textarea_field_A7FFXq"
+        "textarea_field_A7FFXq",
+        "checkbox_field_3Wqkac"
       ],
       "name": "Advanced Form to Sheet",
       "settings": {
